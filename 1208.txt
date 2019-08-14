@@ -1,0 +1,89 @@
+#include "stdio.h"
+#include "string.h"
+#include "stdlib.h"
+void reversePrint(char *ptr)
+{
+	for(int i=strlen(ptr)-1;i>=0;i--)
+		if(ptr[i]!=' ')putchar(ptr[i]);
+		else        	putchar('\n');
+		putchar('\n');
+
+}
+/**********************************/
+/*func1º¯Êý
+/*author:gaowei   date:2017-12-8
+/*this function can print word by word
+/* ptr:
+/**********************************/
+void func1(char *ptr)
+{
+	char *tokenPtr = strtok(ptr," ");
+	while(tokenPtr != NULL)
+	{
+		reversePrint(tokenPtr);		
+		tokenPtr = strtok(NULL," ");
+	}
+}
+void getLast(char *ptr,char *last)
+{
+	char *tokenPtr = strtok(ptr," ");
+	
+	while(tokenPtr != NULL)
+	{	
+		strcpy(last,tokenPtr);	
+		tokenPtr = strtok(NULL," ");
+	}
+}
+
+void func2(char *arr)
+{
+	
+	char arr1[100];
+	strcpy(arr1,arr);
+
+	char arr2[100];
+	getLast(arr1,arr2);
+
+	int len;
+	len = strlen(arr);
+	strcat(arr2," ");
+	strcat(arr2,arr);
+	arr2[len] = '\0';
+	strcpy(arr,arr2);
+
+}
+
+void main()
+{
+	char arr[]="Sichuan university always focuses on basic general education, during which the university actively explores new credit models, strengthens ¡°412¡± undergraduate programs and accelerates the program of becoming a first-rate comprehensive research university worldwide with creative talents cultivated. Abiding by the target of becoming the first-rate comprehensive research university in China, the university adopts the approach of student-centered¡¢research-respected and standard excellent, meets the management system of department-focused,  teacher-strengthened, students-centered and makes sure that the target for cultivating elite should have deeply humanities, profound professional knowledge, strongly innovative deal, broad international horizon. As achieving the goals, the university takes measures in the following aspects: opening mainly research-oriented lab to undergraduates for student research training program by encouraging students to take part in the teacher¡¯s research group; adopting the modern teaching ways to promote teaching and research-study reforms; establishing all kinds of cooperative relationships with famous universities aboard to improve their communicative ability and international competitiveness and taking a series of special steps for talents selection.";
+	char arr1[10000];
+	strcpy(arr1,arr);
+	char subStr1[20],subStr2[20],subStr3[20];
+
+	strcpy(subStr1,strtok(arr1," "));
+	strcpy(subStr2,strtok(NULL," "));
+	strcpy(subStr3,strtok(NULL," "));
+	puts(subStr1);
+	puts(subStr2);
+	puts(subStr3);
+	int count1,count2,count3;
+	count1 = 0;
+	count2 = 0;
+	count3 = 0;
+	
+	char *ptr,*arrStr;
+	arrStr = arr;
+
+	ptr = strstr(arrStr,subStr2);
+	while(ptr != NULL)
+	{
+		count1++;
+		arrStr = ptr + strlen(subStr2);
+		ptr = strstr(arrStr,subStr2);
+	}
+	printf("%d\n",count1);
+
+
+	
+
+}

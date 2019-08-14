@@ -1,0 +1,48 @@
+#include<stdio.h>
+#define SIZE 10
+
+int a[10] = {0};
+int search();
+int main(void)
+{
+    for(int i = 0; i < 10; i++){
+        scanf("%d",&a[i]);
+    }
+
+    for(int i = 0; i < 10; i++){
+        for(int j = 9; j > 0; j--){
+            int hold;
+            if (a[j] < a[j-1]){
+                hold = a[j-1];
+                a[j-1] = a[j];
+                a[j] = hold;
+            }
+        }
+    }
+
+    for(int i = 0; i < 10; i++){
+        printf("%d",a[i]);
+    }
+
+    int searchnum = 0;
+    scanf("%d",&searchnum);
+    search(searchnum);
+}
+
+int search(int y)
+{
+    printf("Please enter a number to find: ");
+    int flag = 0;
+    for(int i = 0; i < 10; i++){
+        if(y == a[i]){
+            printf("the number at %d\n",i);
+            flag = 1;
+            break;
+        }
+    }
+    if(flag == 0){
+        printf("Sorry.");
+    }
+    printf("\n\n");
+}
+

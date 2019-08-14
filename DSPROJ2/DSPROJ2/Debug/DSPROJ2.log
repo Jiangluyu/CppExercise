@@ -1,0 +1,7 @@
+﻿  main.cpp
+c:\users\teamo\source\repos\dsproj2\dsproj2\main.cpp(44): warning C4244: “-=”: 从“double”转换到“int”，可能丢失数据
+c:\users\teamo\source\repos\dsproj2\dsproj2\main.cpp(217): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\teamo\source\repos\dsproj2\dsproj2\main.cpp(237): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\teamo\source\repos\dsproj2\dsproj2\main.cpp(264): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\teamo\source\repos\dsproj2\dsproj2\main.cpp(270): warning C4244: “+=”: 从“double”转换到“unsigned char”，可能丢失数据
+  DSPROJ2.vcxproj -> C:\Users\teamo\source\repos\DSPROJ2\Debug\DSPROJ2.exe

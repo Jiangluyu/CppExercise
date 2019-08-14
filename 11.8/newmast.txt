@@ -1,0 +1,4 @@
+accountNum	name	currentBalance
+154153009	Alan Jones	348.17
+300	Mary Smith	27.19
+5	0.00

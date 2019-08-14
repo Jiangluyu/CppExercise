@@ -1,0 +1,76 @@
+#include <stdio.h>
+int main()
+{
+	int a[50][50]={0};
+    int instruction;
+    int steps;
+    int k;
+    int i=0;
+    int j=0;
+    int x=0;
+    int y=0;
+    int direction=0;
+    printf("please enter your instructions: ");
+	scanf("%d",&instruction);
+    if(instruction==2){
+		while(instruction!=9){
+			printf("please enter your instructions: ");
+			scanf("%d",&instruction);
+			switch(instruction){
+				case 3:
+					direction++;
+                break;
+                case 4:
+					direction--;
+                break;
+                case 5:
+					printf("enter the steps:  ");
+                    scanf("%d",&steps);
+					switch(direction){
+						case 0:
+							for(k=0;k<=steps;k++){
+								x=x+1;
+                                a[x][y]=1;
+							}
+                            break;
+						case 1:
+							for(k=0;k<=steps;k++){
+								y=y+1;
+								a[x][y]=1;
+							}
+                            break;
+                        case 2:
+							for(k=0;k<=steps;k++){
+								x=x-1;
+								a[x][y]=1;
+							}
+                            break;
+						case 3:
+							for(k=0;k<=steps;k++){
+								y=y-1;
+								a[x][y]=1;
+							}
+                    }
+							break;
+				case 6:
+					for(i=0;i<=49;i++){
+						for(j=0;j<=49;j++){
+							printf("%d ",a[i][j]);
+                        }
+                        printf("\n");
+                    }
+                             break;
+            }
+        }
+    }
+    for(i=0;i<=49;i++){
+		for(j=0;j<=49;j++){
+			if(a[i][j]==1)
+            printf("*");
+            else
+            printf(" ");
+         }
+        printf("\n");
+    }
+	system("pause");
+}

@@ -1,0 +1,3 @@
+﻿  shortestPath.cpp
+c:\users\teamo\source\repos\dsproj03\dsproj03\shortestpath.cpp(9): warning C4091: “”: 没有声明变量时忽略“unsigned int”的左侧
+  DSPROJ03.vcxproj -> C:\Users\teamo\source\repos\DSPROJ03\Debug\DSPROJ03.exe
